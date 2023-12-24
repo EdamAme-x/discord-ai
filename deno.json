@@ -1,5 +1,5 @@
 {
-    "tasks": {
-        "start": "deno run --unstable --allow-net --allow-read --allow-write --allow-env --allow-plugin --allow-hrtime --allow-run --allow-sys --unstable --allow-ffi --allow-ffi-read --allow-ffi-write index.ts"
-    }
+  "tasks": {
+    "start": "deno run --unstable --allow-net --allow-read --allow-write --allow-env --allow-plugin --allow-hrtime --allow-run --allow-sys --unstable --allow-ffi --allow-ffi-read --allow-ffi-write index.ts"
+  }
 }

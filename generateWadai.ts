@@ -29,7 +29,7 @@ export class GenWadai {
     result += this.generateRandomElement(this.base)
       .text.replaceAll(
         "{{random_number}}",
-        this.generateRandomNumber().toString()
+        this.generateRandomNumber().toString(),
       )
       .replaceAll("{{date}}", date)
       .replaceAll("{{job}}", this.generateJob())
@@ -61,7 +61,10 @@ export class GenWadai {
     const date = new Date().toDateString();
     const asset = this.generateRandomElement(this.assets);
 
-    return asset.replaceAll("{{date}}", date).replaceAll("{{random_number}}", this.generateRandomNumber().toString());
+    return asset.replaceAll("{{date}}", date).replaceAll(
+      "{{random_number}}",
+      this.generateRandomNumber().toString(),
+    );
   }
 
   assets: string[] = [
@@ -118,9 +121,8 @@ export class GenWadai {
     "買い物",
     "料理",
     "運動",
-    "休息"
-];
-
+    "休息",
+  ];
 
   base: Wadai[] = [
     {
@@ -172,7 +174,8 @@ export class GenWadai {
       priority: 1,
     },
     {
-      text: "[@] サーバーが異常な反応を示しています。プランの利用額が80万円を超えました。",
+      text:
+        "[@] サーバーが異常な反応を示しています。プランの利用額が80万円を超えました。",
       priority: 0.1,
     },
     {
@@ -220,52 +223,76 @@ export class GenWadai {
       priority: 1,
     },
     {
-        text: "荒らしやめてぇ！",
-        priority: 1,
+      text: "荒らしやめてぇ！",
+      priority: 1,
     },
     {
-        text: "数字なら{{random_number}}が好き。",
-        priority: 1,
+      text: "数字なら{{random_number}}が好き。",
+      priority: 1,
     },
     {
-        text: "皆何が好き？",
-        priority: 1,
+      text: "皆何が好き？",
+      priority: 1,
     },
     {
-        text: "おススメの音楽教えて",
-        priority: 1,
+      text: "おススメの音楽教えて",
+      priority: 1,
     },
     {
-        text: "ち〇こしゃぶりたい",
-        priority: 1,
+      text: "ち〇こしゃぶりたい",
+      priority: 1,
     },
     {
-        text: "おススメのゲーム教えて",
-        priority: 1,
+      text: "おススメのゲーム教えて",
+      priority: 1,
     },
     {
-        text: "おススメの{{assets}}教えて",
-        priority: 1,
+      text: "おススメの{{assets}}教えて",
+      priority: 1,
     },
     {
-        text: "{{assets}}ってどれが有名？",
-        priority: 1,
+      text: "{{assets}}ってどれが有名？",
+      priority: 1,
     },
     {
-        text: "{{assets}}愛好家です。",
-        priority: 1,
+      text: "{{assets}}愛好家です。",
+      priority: 1,
     },
     {
-        text: "{{assets}}って何が有名？",
-        priority: 1,
+      text: "{{assets}}って何が有名？",
+      priority: 1,
     },
     {
-        text: "{{assets}}って何がオススメ",
-        priority: 1,
+      text: "{{assets}}って何がオススメ",
+      priority: 1,
     },
     {
-        text: "{{assets}}嫌いな奴殺すわ",
-        priority: 1,
+      text: "{{assets}}嫌いな奴殺すわ",
+      priority: 1,
+    },
+    {
+      text: "{{assets}}好きな奴殺すわ",
+      priority: 1,
+    },
+    {
+      text: "↑ お前の事誰が好きなん",
+      priority: 1,
+    },
+    {
+      text: "↑ 知らんがな死ね",
+      priority: 1,
+    },
+    {
+      text: "↑ こいつゲイ",
+      priority: 1,
+    },
+    {
+      text: "{{assets}}が好きな奴は大体陰キャ (by {{job}})",
+      priority: 1,
+    },
+    {
+      text: "{{assets}}が好きな奴は大体陽キャ",
+      priority: 1,
     },
   ];
 
@@ -280,6 +307,10 @@ export class GenWadai {
     },
     {
       title: "学生",
+      priority: 1,
+    },
+    {
+      title: "障碍者",
       priority: 1,
     },
     {
