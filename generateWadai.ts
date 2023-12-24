@@ -18,9 +18,12 @@ export class GenWadai {
     return Math.floor(Math.random() * 100);
   }
 
+  private omomi = 0;
+
   private generateRandomElement<T extends { priority: number } & unknown>(arr: T[]): T {
     const totalWeight = arr.reduce((sum, element) => sum + element.priority, 0);
     let randomValue = Math.random() * totalWeight;
+    this.omomi += Math.floor(randomValue);
 
     for (const element of arr) {
       randomValue -= element.priority;
@@ -178,11 +181,11 @@ export class GenWadai {
     },
     {
       text: "最近何してる？",
-      priority: 1,
+      priority: 0.6,
     },
     {
       text: "最近何してるん？",
-      priority: 1,
+      priority: 0.5,
     },
     {
       text:
