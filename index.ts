@@ -1,4 +1,4 @@
-import { DiscordWebhook } from "https://deno.land/x/denocord_webhook@v1.10/mod.ts";
+import { DiscordWebhook } from "https://deno.land/x/denocord_webhook@v1.20/mod.ts";
 import "https://deno.land/std@0.191.0/dotenv/load.ts";
 import { GenWadai } from "./generateWadai.ts";
 
