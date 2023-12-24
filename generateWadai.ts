@@ -18,9 +18,20 @@ export class GenWadai {
     return Math.floor(Math.random() * 100);
   }
 
-  private generateRandomElement<T>(arr: T[]): T {
-    return arr[Math.floor(Math.random() * arr.length)];
+  private generateRandomElement<T extends { priority: number } & unknown>(arr: T[]): T {
+    const totalWeight = arr.reduce((sum, element) => sum + element.priority, 0);
+    let randomValue = Math.random() * totalWeight;
+
+    for (const element of arr) {
+      randomValue -= element.priority;
+      if (randomValue <= 0) {
+        return element;
+      }
+    }
+
+    return arr[arr.length - 1];
   }
+
 
   public generateWadai(): string {
     const date = new Date().toDateString();
@@ -59,7 +70,7 @@ export class GenWadai {
 
   public generateAssets(): string {
     const date = new Date().toDateString();
-    const asset = this.generateRandomElement(this.assets);
+    const asset = this.assets[Math.floor(Math.random() * this.assets.length)];
 
     return asset.replaceAll("{{date}}", date).replaceAll(
       "{{random_number}}",
@@ -298,6 +309,10 @@ export class GenWadai {
       text: "今日は{{date}}だよね",
       priority: 1,
     },
+    {
+        text: "今日は{{random_number}}回シコッタ",
+        priority: 1,
+    }
   ];
 
   jobs: Job[] = [
