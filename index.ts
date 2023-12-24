@@ -9,11 +9,15 @@ const DiscordWH = new DiscordWebhook(
 console.log("\x1b[32m[DiscordAI] Started\x1b[0m");
 const wadai = new GenWadai();
 
+function send(text: string) {
+    DiscordWH.sendMessage({
+        text: text,
+        username: "AMEX-AI-人口無能",
+    });
+}
+
 Deno.cron("say", "* * * * *", () => {
     if (Math.random() > (Math.random() - 0.3)) {
-        DiscordWH.sendMessage({
-            text: wadai.generateWadai(),
-            username: "AMEX-AI-人口無能",
-        });
+        send(wadai.generateWadai());
     }
 })
