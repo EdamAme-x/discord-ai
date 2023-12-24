@@ -17,7 +17,7 @@ function send(text: string) {
 }
 
 Deno.cron("say", "* * * * *", () => {
-  if (Math.random() > (Math.random() - 0.2)) {
+  if (Math.random() > (Math.random() - 0.25)) {
     send(wadai.generateWadai());
   }
 });
