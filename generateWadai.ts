@@ -33,7 +33,8 @@ export class GenWadai {
       )
       .replaceAll("{{date}}", date)
       .replaceAll("{{job}}", this.generateJob())
-      .replaceAll("{{mini}}", this.generateMiniWadai());
+      .replaceAll("{{mini}}", this.generateMiniWadai())
+      .replaceAll("{{assets}}", this.generateAssets());
 
     return result;
   }
@@ -55,6 +56,71 @@ export class GenWadai {
       .replaceAll("{{random_number}}", this.generateRandomNumber().toString())
       .replaceAll("{{date}}", date);
   }
+
+  public generateAssets(): string {
+    const date = new Date().toDateString();
+    const asset = this.generateRandomElement(this.assets);
+
+    return asset.replaceAll("{{date}}", date).replaceAll("{{random_number}}", this.generateRandomNumber().toString());
+  }
+
+  assets: string[] = [
+    "スイーツ",
+    "ケーキ",
+    "ハンバーガー",
+    "ピザ",
+    "ファストフード店",
+    "ピアス",
+    "挨拶",
+    "感謝",
+    "朝",
+    "夜",
+    "謝罪",
+    "謝罪",
+    "お願い",
+    "否定",
+    "肯定",
+    "祝福",
+    "ごはん",
+    "水",
+    "コーヒー",
+    "テレビ",
+    "電話",
+    "パソコン",
+    "車",
+    "自転車",
+    "歩行",
+    "ランニング",
+    "泳ぎ",
+    "読書",
+    "書き物",
+    "聞き取り",
+    "話すこと",
+    "笑顔",
+    "涙",
+    "眠り",
+    "夢",
+    "仕事",
+    "勉強",
+    "学校",
+    "家族",
+    "友達",
+    "恋愛",
+    "音楽",
+    "映画",
+    "本",
+    "花",
+    "空",
+    "海",
+    "山",
+    "公園",
+    "旅行",
+    "買い物",
+    "料理",
+    "運動",
+    "休息"
+];
+
 
   base: Wadai[] = [
     {
@@ -155,6 +221,34 @@ export class GenWadai {
     },
     {
         text: "荒らしやめてぇ！",
+        priority: 1,
+    },
+    {
+        text: "数字なら{{random_number}}が好き。",
+        priority: 1,
+    },
+    {
+        text: "皆何が好き？",
+        priority: 1,
+    },
+    {
+        text: "おススメの音楽教えて",
+        priority: 1,
+    },
+    {
+        text: "ち〇こしゃぶりたい",
+        priority: 1,
+    },
+    {
+        text: "おススメのゲーム教えて",
+        priority: 1,
+    },
+    {
+        text: "おススメの{{assets}}教えて",
+        priority: 1,
+    },
+    {
+        text: "{{assets}}ってどれが有名？",
         priority: 1,
     },
   ];
