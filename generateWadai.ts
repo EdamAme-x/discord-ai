@@ -279,7 +279,7 @@ export class GenWadai {
       priority: 1,
     },
     {
-      text: "↑ 知らんがな死ね",
+      text: "↑ 知らんがな死ね {{mini}}",
       priority: 1,
     },
     {
@@ -292,6 +292,10 @@ export class GenWadai {
     },
     {
       text: "{{assets}}が好きな奴は大体陽キャ",
+      priority: 1,
+    },
+    {
+      text: "今日は{{date}}だよね",
       priority: 1,
     },
   ];
