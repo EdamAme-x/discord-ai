@@ -10,7 +10,7 @@ console.log("\x1b[32m[DiscordAI] Started\x1b[0m");
 const wadai = new GenWadai();
 
 Deno.cron("say", "* * * * *", () => {
-    if (Math.random() > 0.125) {
+    if (Math.random() > (Math.random() - 0.3)) {
         DiscordWH.sendMessage({
             text: wadai.generateWadai(),
             username: "AMEX-AI-人口無能",

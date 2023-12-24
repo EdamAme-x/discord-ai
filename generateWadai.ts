@@ -251,6 +251,22 @@ export class GenWadai {
         text: "{{assets}}ってどれが有名？",
         priority: 1,
     },
+    {
+        text: "{{assets}}愛好家です。",
+        priority: 1,
+    },
+    {
+        text: "{{assets}}って何が有名？",
+        priority: 1,
+    },
+    {
+        text: "{{assets}}って何がオススメ",
+        priority: 1,
+    },
+    {
+        text: "{{assets}}嫌いな奴殺すわ",
+        priority: 1,
+    },
   ];
 
   jobs: Job[] = [
